@@ -10,19 +10,25 @@ namespace EmployeeWage
     {
         public void Check()
         {
-            int present = 1;
+            int isfulltime = 1;
+            int isparttime = 2; 
             int wageperhrs = 20;
             int empHrs = 0;
             int empwage = 0;
             Random random = new Random();
-            int check = random.Next(2);
-            if (check == present)
+            int check = random.Next(0,3);
+            if(check == isfulltime)
             {
-                Console.WriteLine("Employee Is Present");
+                Console.WriteLine("Employee Is Present Full Time");
                 empHrs = 8;
             }
-            else
+            else if(check == isparttime)
             {
+                Console.WriteLine("Employee Is Present Part Time");
+                empHrs = 4;
+            }
+            else
+            {                            
                 Console.WriteLine("Employee Is Absent");
                 empHrs = 0;
             }
